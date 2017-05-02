@@ -54,7 +54,7 @@ def test2():
 @app.route("/moveCamera/<angle>")
 def moveCamera(angle=0):
     angle = int(angle)
-    moveServo.setAngle(angle*20+500)
+    moveServo.setAngle(abs(100-(angle*20+500)))
     camera = picamera.PiCamera()
     try:
         camera.vflip = True
